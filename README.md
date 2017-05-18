@@ -26,7 +26,9 @@ clearly ios UIWebView is lack of three fetch done
 
 iOS 10.3.1 and 10.3.2, earlier version not tested.
 
+## P.S.
 
+Not occurs on WKWebView
 
 
 =====================================================================
