@@ -14,7 +14,11 @@ and do above line again
 
 results:
 
-chrome: ![](chrome.png)  ios UIWebView:![](ios-uiwebview.png)
+| chrome  | ios UIWebView |
+| ------------- | ------------- |
+| ![](chrome.png)  | ![](ios-uiwebview.png) |
+
+
 
 clearly ios UIWebView is lack of three fetch done
 
