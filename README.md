@@ -2,7 +2,7 @@
 
 ## summery
 
-fetch is buggy inside onfocus, it may just be silent and call neither callback.
+In UIWebView, fetch is buggy inside onfocus, it may just be silent and call neither callback.
 
 ## demo
 
