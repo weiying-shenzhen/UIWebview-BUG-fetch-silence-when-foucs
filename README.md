@@ -6,7 +6,7 @@ fetch is buggy inside onfocus, it may just be silent and call neither callback.
 
 ## demo
 
-open index.html,
+open demo page : [https://weiying-shenzhen.github.io/UIWebview-BUG-fetch-silence-when-foucs/](https://weiying-shenzhen.github.io/UIWebview-BUG-fetch-silence-when-foucs/) ,
 
 focus on input, and blur
 
