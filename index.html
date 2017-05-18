@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Document</title>
+  <style>
+    input {
+        border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+    <p>点击输入框触发 focus 和 fetch</p>
+    <input type="text">
+    <div>progress: <span class="progress"></span></div>
+    <script>
+        const $input = document.querySelector('input')
+        const $progress = document.querySelector('.progress')
+
+        $progress.textContent = 'waiting for focusing input'
+        $input.onfocus = function(e) {
+            $progress.textContent = 'fetch start'
+
+            fetch('http://b2cqq.show.wepiao.com/pub/@hot_words')
+                .then(res => {
+                    $progress.textContent = 'fetch done'
+                })
+        }
+    </script>
+</body>
+</html>
