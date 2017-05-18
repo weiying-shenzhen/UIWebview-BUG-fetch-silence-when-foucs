@@ -4,34 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1, shrink-to-fit=no">
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>Document</title>
+  <title>UIWebview Bug fetch</title>
   <style>
     input {
         border: 1px solid black;
         height:44px;
     }
+      p{
+          font-size: 12px;
+          line-height: 16px;
+          margin: 5px 0;
+      }
   </style>
 </head>
 <body>
+    <p style="color:#999;" id="ua">
     <p>click in input to trigger fetch</p>
-    <input type="text">
-    <div>progress: <span class="progress"></span></div>
+    <input type="text" name="a">
     <script>
-        const $input = document.querySelector('input');
-        const $progress = document.querySelector('.progress');
+        document.getElementById('ua').textContent=navigator.userAgent;
+        function append(text) {
+            let p = document.createElement("p");
+            p.innerHTML = text;
+            document.body.appendChild(p);
+        }
 
-        $progress.textContent = 'waiting for focusing input';
-        $input.onfocus = function (e) {
-            $progress.textContent = 'fetch start';
+        function doFetch(number){
+            append(number + ' fetch start');
 
             fetch('https://b2cqq.show.wepiao.com/pub/@hot_words')
-                .then(res => {
-                    $progress.textContent = 'fetch done';
+                .then(function(res){
+                    append(number + ' fetch done');
                 })
-                .catch(err => {
-                    $progress.textContent = 'error fetch';
+                .catch(function(err){
+                    append(number + ' fetch error');
                 })
         }
+
+        const $input = document.querySelector('input');
+
+
+        $input.onfocus = function (e) {
+            doFetch('No1');
+            doFetch('No2');
+            doFetch('No3');
+        };
     </script>
 </body>
 </html>
