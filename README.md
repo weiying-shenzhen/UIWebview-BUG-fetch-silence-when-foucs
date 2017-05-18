@@ -8,6 +8,8 @@ fetch is buggy inside onfocus, it may just be silent and call neither callback.
 
 open demo page : [https://weiying-shenzhen.github.io/UIWebview-BUG-fetch-silence-when-foucs/](https://weiying-shenzhen.github.io/UIWebview-BUG-fetch-silence-when-foucs/) ,
 
+( [source code link here](https://github.com/weiying-shenzhen/UIWebview-BUG-fetch-silence-when-foucs/blob/master/index.html) )
+
 focus on input, and blur
 
 and do above line again
@@ -24,7 +26,7 @@ clearly ios UIWebView is lack of three fetch done
 
 ## environment
 
-iOS 10.3.1 and 10.3.2, earlier version not tested.
+iOS 10.3, 10.3.1 and 10.3.2, earlier version not tested.
 
 ## P.S.
 
