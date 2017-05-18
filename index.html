@@ -8,24 +8,28 @@
   <style>
     input {
         border: 1px solid black;
+        height:44px;
     }
   </style>
 </head>
 <body>
-    <p>点击输入框触发 focus 和 fetch</p>
+    <p>click in input to trigger fetch</p>
     <input type="text">
     <div>progress: <span class="progress"></span></div>
     <script>
-        const $input = document.querySelector('input')
-        const $progress = document.querySelector('.progress')
+        const $input = document.querySelector('input');
+        const $progress = document.querySelector('.progress');
 
-        $progress.textContent = 'waiting for focusing input'
-        $input.onfocus = function(e) {
-            $progress.textContent = 'fetch start'
+        $progress.textContent = 'waiting for focusing input';
+        $input.onfocus = function (e) {
+            $progress.textContent = 'fetch start';
 
-            fetch('http://b2cqq.show.wepiao.com/pub/@hot_words')
+            fetch('https://b2cqq.show.wepiao.com/pub/@hot_words')
                 .then(res => {
-                    $progress.textContent = 'fetch done'
+                    $progress.textContent = 'fetch done';
+                })
+                .catch(err => {
+                    $progress.textContent = 'error fetch';
                 })
         }
     </script>
