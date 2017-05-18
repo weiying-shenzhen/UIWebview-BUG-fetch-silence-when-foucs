@@ -22,7 +22,9 @@ results:
 
 
 
-clearly ios UIWebView is lack of three fetch done
+clearly ios UIWebView is lack of 3 done log after second focus. (no error log either)
+
+the 3 fetch at second focus seem just silent after start, neither success nor error callback is triggered.
 
 ## environment
 
